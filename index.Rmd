@@ -1,6 +1,6 @@
 ---
 title: "Trade Intensity and Liquidity"
-author: 
+author: "Matt Brigida and William Pratt"
 date: 
 output:
   revealjs::revealjs_presentation:
@@ -10,20 +10,19 @@ output:
 ---
 
 
-
 ## Goal of the Analysis
 
-This analysis investigates how liquidity is affected by periods of high trade intensity.  We test whether the following measures, in the few seconds before a trade, have an effect on the book's liquidity in the 100 milliseconds after the trade.
+<p align="left">This analysis investigates how <b class="fragment highlight-green">liquidity is affected by periods of high trade intensity</b>.  We test whether the following measures, in the few seconds before a trade, have an effect on the book's liquidity in the <b class="fragment highlight-green">100 milliseconds</b> after the trade.</p>
 
--  number of changes in the orderbook.
+-  <b class="fragment highlight-current-blue">number of changes in the orderbook.</b>
 
--  size of the bid-ask spread.
+-  <b class="fragment highlight-current-blue">size of the bid-ask spread.</b>
 
--  number of trades.
+-  <b class="fragment highlight-current-blue">number of trades.</b>
 
 ## Results
 
-We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.
+<p align="left">We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.</p>
 
 
 
@@ -46,6 +45,166 @@ library(stargazer)
 
 stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=FALSE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 16, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.", font.size="scriptsize", single.row = TRUE, column.sep.width = "1pt")
 
- ```
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept17multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 17, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept18multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 18, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept19multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 19, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept20multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 20, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept23multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 23, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept24multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 24, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept25multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 25, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept26multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 26, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+```
+</font>
+
+##
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept27multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=TRUE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 27, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.")
+```
 
 </font>

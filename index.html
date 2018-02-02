@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content />
+  <meta name="author" content="Matt Brigida and William Pratt" />
   <title>Trade Intensity and Liquidity</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1768,20 +1768,25 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section>
     <h1 class="title">Trade Intensity and Liquidity</h1>
+    <h2 class="author">Matt Brigida and William Pratt</h2>
 </section>
 
 <section id="goal-of-the-analysis" class="slide level2">
 <h2>Goal of the Analysis</h2>
-<p>This analysis investigates how liquidity is affected by periods of high trade intensity. We test whether the following measures, in the few seconds before a trade, have an effect on the book’s liquidity in the 100 milliseconds after the trade.</p>
+<p align="left">
+This analysis investigates how <b class="fragment highlight-green">liquidity is affected by periods of high trade intensity</b>. We test whether the following measures, in the few seconds before a trade, have an effect on the book’s liquidity in the <b class="fragment highlight-green">100 milliseconds</b> after the trade.
+</p>
 <ul>
-<li><p>number of changes in the orderbook.</p></li>
-<li><p>size of the bid-ask spread.</p></li>
-<li><p>number of trades.</p></li>
+<li><p><b class="fragment highlight-current-blue">number of changes in the orderbook.</b></p></li>
+<li><p><b class="fragment highlight-current-blue">size of the bid-ask spread.</b></p></li>
+<li><p><b class="fragment highlight-current-blue">number of trades.</b></p></li>
 </ul>
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
-<p>We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.</p>
+<p align="left">
+We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.
+</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -2079,6 +2084,3066 @@ Adjusted R<sup>2</sup>
 </td>
 <td>
 0.03
+</td>
+<td>
+0.003
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 17, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+9,111.69
+</td>
+<td>
+-60.38
+</td>
+<td>
+21.74
+</td>
+<td>
+-52.15
+</td>
+<td>
+1,474.28<sup>**</sup>
+</td>
+<td>
+-222.86
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(6,233.93)
+</td>
+<td>
+(1,085.87)
+</td>
+<td>
+(993.14)
+</td>
+<td>
+(714.86)
+</td>
+<td>
+(669.83)
+</td>
+<td>
+(395.40)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+-44,338.97
+</td>
+<td>
+-46,881.25
+</td>
+<td>
+-63,597.75
+</td>
+<td>
+-10,310.35
+</td>
+<td>
+-28,183.81
+</td>
+<td>
+-19,169.63
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(498,100.20)
+</td>
+<td>
+(86,762.49)
+</td>
+<td>
+(75,504.28)
+</td>
+<td>
+(54,347.38)
+</td>
+<td>
+(51,550.81)
+</td>
+<td>
+(30,430.78)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-55,301.59
+</td>
+<td>
+8,931.04
+</td>
+<td>
+1,493.16
+</td>
+<td>
+2,528.10
+</td>
+<td>
+-4,460.53
+</td>
+<td>
+1,821.45
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(47,689.16)
+</td>
+<td>
+(8,306.82)
+</td>
+<td>
+(5,705.14)
+</td>
+<td>
+(4,106.51)
+</td>
+<td>
+(3,749.22)
+</td>
+<td>
+(2,213.19)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+144,097.60
+</td>
+<td>
+224,526.40
+</td>
+<td>
+189,482.80
+</td>
+<td>
+2,085.33
+</td>
+<td>
+-11,428.04
+</td>
+<td>
+122,755.30<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(885,649.00)
+</td>
+<td>
+(154,268.40)
+</td>
+<td>
+(137,433.80)
+</td>
+<td>
+(98,923.75)
+</td>
+<td>
+(86,122.15)
+</td>
+<td>
+(50,838.47)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+198
+</td>
+<td>
+198
+</td>
+<td>
+217
+</td>
+<td>
+217
+</td>
+<td>
+2,492
+</td>
+<td>
+2,492
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.005
+</td>
+<td>
+0.01
+</td>
+<td>
+0.003
+</td>
+<td>
+0.0005
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.004
+</td>
+<td>
+-0.001
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.001
+</td>
+<td>
+-0.001
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 18, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+249.58
+</td>
+<td>
+-173.53
+</td>
+<td>
+230.74
+</td>
+<td>
+-829.33
+</td>
+<td>
+3,006.22<sup>***</sup>
+</td>
+<td>
+-693.96
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1,449.18)
+</td>
+<td>
+(741.84)
+</td>
+<td>
+(1,555.04)
+</td>
+<td>
+(4,754.50)
+</td>
+<td>
+(608.10)
+</td>
+<td>
+(469.88)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+-23,955.18
+</td>
+<td>
+-4,666.65
+</td>
+<td>
+-2,086.15
+</td>
+<td>
+-160,352.60
+</td>
+<td>
+102,997.60<sup>**</sup>
+</td>
+<td>
+-35,310.60
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(78,245.89)
+</td>
+<td>
+(40,054.30)
+</td>
+<td>
+(69,598.97)
+</td>
+<td>
+(212,796.90)
+</td>
+<td>
+(47,100.45)
+</td>
+<td>
+(36,394.55)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-1,876.98
+</td>
+<td>
+-1,006.45
+</td>
+<td>
+-4,576.40
+</td>
+<td>
+-5,325.65
+</td>
+<td>
+-10,537.18<sup>***</sup>
+</td>
+<td>
+4,171.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(11,239.70)
+</td>
+<td>
+(5,753.63)
+</td>
+<td>
+(11,342.74)
+</td>
+<td>
+(34,680.09)
+</td>
+<td>
+(3,871.08)
+</td>
+<td>
+(2,991.18)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+72,570.97
+</td>
+<td>
+82,395.43
+</td>
+<td>
+202,919.00
+</td>
+<td>
+535,752.30
+</td>
+<td>
+-257,185.50<sup>***</sup>
+</td>
+<td>
+86,100.07
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(156,018.20)
+</td>
+<td>
+(79,866.19)
+</td>
+<td>
+(143,982.80)
+</td>
+<td>
+(440,223.30)
+</td>
+<td>
+(78,991.52)
+</td>
+<td>
+(61,036.81)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+241
+</td>
+<td>
+241
+</td>
+<td>
+245
+</td>
+<td>
+245
+</td>
+<td>
+2,638
+</td>
+<td>
+2,638
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.001
+</td>
+<td>
+0.002
+</td>
+<td>
+0.001
+</td>
+<td>
+0.004
+</td>
+<td>
+0.01
+</td>
+<td>
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.0001
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 19, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+-169.33
+</td>
+<td>
+-177.02
+</td>
+<td>
+538.41
+</td>
+<td>
+552.51
+</td>
+<td>
+-679.04<sup>*</sup>
+</td>
+<td>
+-159.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(608.54)
+</td>
+<td>
+(538.47)
+</td>
+<td>
+(595.23)
+</td>
+<td>
+(663.24)
+</td>
+<td>
+(347.83)
+</td>
+<td>
+(296.66)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+47,867.66
+</td>
+<td>
+120,465.90<sup>*</sup>
+</td>
+<td>
+11,218.42
+</td>
+<td>
+92,454.65<sup>*</sup>
+</td>
+<td>
+40,336.68
+</td>
+<td>
+38,044.76
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(81,578.39)
+</td>
+<td>
+(72,185.50)
+</td>
+<td>
+(45,468.28)
+</td>
+<td>
+(50,663.40)
+</td>
+<td>
+(43,094.54)
+</td>
+<td>
+(36,754.96)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-3,116.42
+</td>
+<td>
+-6.89
+</td>
+<td>
+-2,463.74
+</td>
+<td>
+-1,780.60
+</td>
+<td>
+1,915.92
+</td>
+<td>
+1,009.27
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(3,521.92)
+</td>
+<td>
+(3,116.41)
+</td>
+<td>
+(2,655.01)
+</td>
+<td>
+(2,958.36)
+</td>
+<td>
+(1,722.21)
+</td>
+<td>
+(1,468.86)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-122,558.10
+</td>
+<td>
+-138,461.90
+</td>
+<td>
+31,722.25
+</td>
+<td>
+-171,147.60<sup>*</sup>
+</td>
+<td>
+49,841.61
+</td>
+<td>
+14,034.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(127,523.00)
+</td>
+<td>
+(112,840.00)
+</td>
+<td>
+(89,170.94)
+</td>
+<td>
+(99,359.43)
+</td>
+<td>
+(67,525.07)
+</td>
+<td>
+(57,591.54)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+354
+</td>
+<td>
+354
+</td>
+<td>
+323
+</td>
+<td>
+323
+</td>
+<td>
+4,314
+</td>
+<td>
+4,314
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.003
+</td>
+<td>
+0.01
+</td>
+<td>
+0.001
+</td>
+<td>
+0.0004
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.003
+</td>
+<td>
+-0.0003
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.003
+</td>
+<td>
+0.001
+</td>
+<td>
+-0.0003
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 20, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+673.93
+</td>
+<td>
+230.52
+</td>
+<td>
+754.33
+</td>
+<td>
+1,108.08
+</td>
+<td>
+125.08
+</td>
+<td>
+-233.48
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(5,147.63)
+</td>
+<td>
+(705.37)
+</td>
+<td>
+(1,015.59)
+</td>
+<td>
+(1,244.32)
+</td>
+<td>
+(447.00)
+</td>
+<td>
+(488.77)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+-198,894.60
+</td>
+<td>
+-9,368.22
+</td>
+<td>
+36,886.78
+</td>
+<td>
+-39,847.42
+</td>
+<td>
+10,933.41
+</td>
+<td>
+83,826.01<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(388,439.30)
+</td>
+<td>
+(53,226.88)
+</td>
+<td>
+(56,524.39)
+</td>
+<td>
+(69,254.84)
+</td>
+<td>
+(35,865.31)
+</td>
+<td>
+(39,216.73)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-7,762.43
+</td>
+<td>
+118.64
+</td>
+<td>
+-5,043.07
+</td>
+<td>
+-6,197.98
+</td>
+<td>
+-1,486.94
+</td>
+<td>
+2,853.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(27,899.52)
+</td>
+<td>
+(3,823.00)
+</td>
+<td>
+(7,642.78)
+</td>
+<td>
+(9,364.09)
+</td>
+<td>
+(2,665.20)
+</td>
+<td>
+(2,914.25)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+690,504.80
+</td>
+<td>
+129,928.00
+</td>
+<td>
+54,551.13
+</td>
+<td>
+95,330.30
+</td>
+<td>
+80,398.73
+</td>
+<td>
+-64,600.62
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(789,370.80)
+</td>
+<td>
+(108,165.50)
+</td>
+<td>
+(112,225.00)
+</td>
+<td>
+(137,500.40)
+</td>
+<td>
+(64,013.13)
+</td>
+<td>
+(69,994.81)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+120
+</td>
+<td>
+120
+</td>
+<td>
+141
+</td>
+<td>
+141
+</td>
+<td>
+1,595
+</td>
+<td>
+1,595
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.003
+</td>
+<td>
+0.003
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.0003
+</td>
+<td>
+0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.02
+</td>
+<td>
+-0.02
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.002
+</td>
+<td>
+0.002
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 23, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+5,829.86
+</td>
+<td>
+634.40
+</td>
+<td>
+-1,550.35
+</td>
+<td>
+2,464.47
+</td>
+<td>
+2,149.45<sup>***</sup>
+</td>
+<td>
+3,777.97<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(5,156.58)
+</td>
+<td>
+(939.48)
+</td>
+<td>
+(1,215.72)
+</td>
+<td>
+(2,233.42)
+</td>
+<td>
+(511.45)
+</td>
+<td>
+(1,233.47)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+-73,534.40
+</td>
+<td>
+23,546.42
+</td>
+<td>
+150,537.70<sup>*</sup>
+</td>
+<td>
+4,657.66
+</td>
+<td>
+36,869.39
+</td>
+<td>
+153,673.50
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(397,929.80)
+</td>
+<td>
+(72,498.72)
+</td>
+<td>
+(80,233.12)
+</td>
+<td>
+(147,397.00)
+</td>
+<td>
+(40,214.46)
+</td>
+<td>
+(96,986.60)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-53,840.58
+</td>
+<td>
+-2,178.96
+</td>
+<td>
+16,896.69<sup>*</sup>
+</td>
+<td>
+3,777.33
+</td>
+<td>
+-10,983.26<sup>***</sup>
+</td>
+<td>
+-13,254.48<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(54,848.57)
+</td>
+<td>
+(9,992.85)
+</td>
+<td>
+(9,429.43)
+</td>
+<td>
+(17,322.89)
+</td>
+<td>
+(3,220.00)
+</td>
+<td>
+(7,765.79)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+532,978.80
+</td>
+<td>
+81,224.22
+</td>
+<td>
+-63,021.84
+</td>
+<td>
+161,700.70
+</td>
+<td>
+218,804.30<sup>***</sup>
+</td>
+<td>
+48,867.40
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(776,259.30)
+</td>
+<td>
+(141,426.50)
+</td>
+<td>
+(159,561.80)
+</td>
+<td>
+(293,132.40)
+</td>
+<td>
+(76,206.74)
+</td>
+<td>
+(183,790.40)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+170
+</td>
+<td>
+170
+</td>
+<td>
+156
+</td>
+<td>
+156
+</td>
+<td>
+1,585
+</td>
+<td>
+1,585
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.05
+</td>
+<td>
+0.03
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.03
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 24, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+531.04
+</td>
+<td>
+1,593.17
+</td>
+<td>
+-371.67
+</td>
+<td>
+7,853.48<sup>***</sup>
+</td>
+<td>
+369.28
+</td>
+<td>
+1,283.51<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(593.80)
+</td>
+<td>
+(3,266.71)
+</td>
+<td>
+(538.26)
+</td>
+<td>
+(2,662.86)
+</td>
+<td>
+(226.09)
+</td>
+<td>
+(565.65)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+30,444.14
+</td>
+<td>
+-83,687.98
+</td>
+<td>
+22,493.72
+</td>
+<td>
+327,988.60
+</td>
+<td>
+153,234.60<sup>***</sup>
+</td>
+<td>
+-197,541.80<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(53,983.25)
+</td>
+<td>
+(296,983.70)
+</td>
+<td>
+(60,182.92)
+</td>
+<td>
+(297,732.70)
+</td>
+<td>
+(35,451.67)
+</td>
+<td>
+(88,696.67)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-1,656.16
+</td>
+<td>
+2,843.60
+</td>
+<td>
+3,156.11
+</td>
+<td>
+-23,357.54<sup>**</sup>
+</td>
+<td>
+-40.36
+</td>
+<td>
+-3,835.70
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(3,868.21)
+</td>
+<td>
+(21,280.61)
+</td>
+<td>
+(1,954.95)
+</td>
+<td>
+(9,671.39)
+</td>
+<td>
+(945.65)
+</td>
+<td>
+(2,365.93)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-10,685.39
+</td>
+<td>
+588,183.00
+</td>
+<td>
+109,436.30
+</td>
+<td>
+-428,410.90
+</td>
+<td>
+-61,940.70
+</td>
+<td>
+784,325.90<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(104,593.00)
+</td>
+<td>
+(575,408.40)
+</td>
+<td>
+(109,860.30)
+</td>
+<td>
+(543,493.10)
+</td>
+<td>
+(60,650.30)
+</td>
+<td>
+(151,741.20)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+249
+</td>
+<td>
+249
+</td>
+<td>
+284
+</td>
+<td>
+284
+</td>
+<td>
+2,863
+</td>
+<td>
+2,863
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.005
+</td>
+<td>
+0.02
+</td>
+<td>
+0.04
+</td>
+<td>
+0.01
+</td>
+<td>
+0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.03
+</td>
+<td>
+0.01
+</td>
+<td>
+0.002
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 25, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+-948.18
+</td>
+<td>
+-544.25
+</td>
+<td>
+-207.49
+</td>
+<td>
+-2,008.42
+</td>
+<td>
+101.03
+</td>
+<td>
+-246.79
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(2,405.99)
+</td>
+<td>
+(981.54)
+</td>
+<td>
+(950.38)
+</td>
+<td>
+(5,709.76)
+</td>
+<td>
+(703.29)
+</td>
+<td>
+(807.26)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+100,718.00
+</td>
+<td>
+-6,709.21
+</td>
+<td>
+42,620.29
+</td>
+<td>
+75,035.79
+</td>
+<td>
+126,927.30<sup>**</sup>
+</td>
+<td>
+146,170.00<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(163,577.90)
+</td>
+<td>
+(66,732.89)
+</td>
+<td>
+(57,110.41)
+</td>
+<td>
+(343,112.90)
+</td>
+<td>
+(64,457.09)
+</td>
+<td>
+(73,985.67)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+14,728.78
+</td>
+<td>
+3,618.93
+</td>
+<td>
+1,272.33
+</td>
+<td>
+13,260.28
+</td>
+<td>
+-2,323.54
+</td>
+<td>
+2,987.66
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(17,406.81)
+</td>
+<td>
+(7,101.24)
+</td>
+<td>
+(6,455.60)
+</td>
+<td>
+(38,784.50)
+</td>
+<td>
+(4,684.47)
+</td>
+<td>
+(5,376.96)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+12,965.38
+</td>
+<td>
+160,597.60
+</td>
+<td>
+19,338.95
+</td>
+<td>
+370,446.90
+</td>
+<td>
+145,953.60
+</td>
+<td>
+13,743.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(320,905.40)
+</td>
+<td>
+(130,915.90)
+</td>
+<td>
+(106,029.60)
+</td>
+<td>
+(637,013.80)
+</td>
+<td>
+(108,743.60)
+</td>
+<td>
+(124,818.90)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+215
+</td>
+<td>
+215
+</td>
+<td>
+217
+</td>
+<td>
+217
+</td>
+<td>
+2,510
+</td>
+<td>
+2,510
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.002
+</td>
+<td>
+0.003
+</td>
+<td>
+0.001
+</td>
+<td>
+0.002
+</td>
+<td>
+0.002
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.001
+</td>
+<td>
+0.0005
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 26, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+287.29
+</td>
+<td>
+876.52
+</td>
+<td>
+-521.68
+</td>
+<td>
+5,633.56<sup>***</sup>
+</td>
+<td>
+568.41<sup>***</sup>
+</td>
+<td>
+1,818.24<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(541.11)
+</td>
+<td>
+(786.40)
+</td>
+<td>
+(420.20)
+</td>
+<td>
+(1,017.44)
+</td>
+<td>
+(207.73)
+</td>
+<td>
+(366.07)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+-100,345.20<sup>*</sup>
+</td>
+<td>
+51,922.75
+</td>
+<td>
+66,465.10
+</td>
+<td>
+-224,142.20<sup>*</sup>
+</td>
+<td>
+-119,124.50<sup>***</sup>
+</td>
+<td>
+30,491.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(57,581.08)
+</td>
+<td>
+(83,682.75)
+</td>
+<td>
+(48,214.60)
+</td>
+<td>
+(116,743.00)
+</td>
+<td>
+(23,041.96)
+</td>
+<td>
+(40,605.94)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-2,316.25
+</td>
+<td>
+-2,564.99
+</td>
+<td>
+2,873.44
+</td>
+<td>
+-24,633.91<sup>***</sup>
+</td>
+<td>
+-2,954.21<sup>***</sup>
+</td>
+<td>
+-5,012.68<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(2,848.74)
+</td>
+<td>
+(4,140.08)
+</td>
+<td>
+(2,200.84)
+</td>
+<td>
+(5,328.95)
+</td>
+<td>
+(1,099.83)
+</td>
+<td>
+(1,938.19)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+183,970.90<sup>**</sup>
+</td>
+<td>
+-6,292.82
+</td>
+<td>
+51.66
+</td>
+<td>
+165,271.90
+</td>
+<td>
+199,316.80<sup>***</sup>
+</td>
+<td>
+-35,725.84
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(92,664.67)
+</td>
+<td>
+(134,669.80)
+</td>
+<td>
+(73,955.92)
+</td>
+<td>
+(179,071.00)
+</td>
+<td>
+(34,142.32)
+</td>
+<td>
+(60,167.66)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+557
+</td>
+<td>
+557
+</td>
+<td>
+567
+</td>
+<td>
+567
+</td>
+<td>
+6,284
+</td>
+<td>
+6,284
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+<td>
+0.05
+</td>
+<td>
+0.01
+</td>
+<td>
+0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.002
+</td>
+<td>
+-0.0002
+</td>
+<td>
+0.001
+</td>
+<td>
+0.05
+</td>
+<td>
+0.005
+</td>
+<td>
+0.01
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td colspan="6" style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<p></font></p>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><font size="5"></p>
+<table style="text-align:center">
+<caption>
+<strong>Regression results for Sept. 27, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.</strong>
+</caption>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td colspan="6">
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="6" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+Buy/Bid
+</td>
+<td>
+Buy/Offer
+</td>
+<td>
+Sell/Bid
+</td>
+<td>
+Sell/Offer
+</td>
+<td>
+NA/Bid
+</td>
+<td>
+NA/Offer
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1)
+</td>
+<td>
+(2)
+</td>
+<td>
+(3)
+</td>
+<td>
+(4)
+</td>
+<td>
+(5)
+</td>
+<td>
+(6)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. Ch.
+</td>
+<td>
+15,945.64<sup>***</sup>
+</td>
+<td>
+535.82
+</td>
+<td>
+-552.85
+</td>
+<td>
+-373.94
+</td>
+<td>
+1,156.73<sup>**</sup>
+</td>
+<td>
+261.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(2,878.46)
+</td>
+<td>
+(797.94)
+</td>
+<td>
+(836.06)
+</td>
+<td>
+(1,274.53)
+</td>
+<td>
+(583.38)
+</td>
+<td>
+(526.71)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Avg. BO
+</td>
+<td>
+55,069.97
+</td>
+<td>
+81,649.71
+</td>
+<td>
+27,448.72
+</td>
+<td>
+102,558.40
+</td>
+<td>
+31,948.61
+</td>
+<td>
+125,964.50<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(205,859.20)
+</td>
+<td>
+(57,066.07)
+</td>
+<td>
+(68,397.58)
+</td>
+<td>
+(104,269.00)
+</td>
+<td>
+(48,127.03)
+</td>
+<td>
+(43,451.66)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Num. T
+</td>
+<td>
+-56,693.69<sup>***</sup>
+</td>
+<td>
+-889.97
+</td>
+<td>
+151.17
+</td>
+<td>
+2,308.53
+</td>
+<td>
+-6,893.87<sup>**</sup>
+</td>
+<td>
+569.71
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(13,372.45)
+</td>
+<td>
+(3,706.97)
+</td>
+<td>
+(5,151.29)
+</td>
+<td>
+(7,852.91)
+</td>
+<td>
+(3,302.30)
+</td>
+<td>
+(2,981.49)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+-420,289.70
+</td>
+<td>
+-100,047.40
+</td>
+<td>
+2,448.60
+</td>
+<td>
+-154,983.50
+</td>
+<td>
+-39,806.65
+</td>
+<td>
+-168,540.80<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(330,982.90)
+</td>
+<td>
+(91,751.52)
+</td>
+<td>
+(105,035.50)
+</td>
+<td>
+(160,121.80)
+</td>
+<td>
+(74,098.41)
+</td>
+<td>
+(66,900.02)
+</td>
+</tr>
+<tr>
+<td colspan="7" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+211
+</td>
+<td>
+211
+</td>
+<td>
+225
+</td>
+<td>
+225
+</td>
+<td>
+2,545
+</td>
+<td>
+2,545
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.14
+</td>
+<td>
+0.02
+</td>
+<td>
+0.01
+</td>
+<td>
+0.005
+</td>
+<td>
+0.002
+</td>
+<td>
+0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.13
+</td>
+<td>
+0.002
+</td>
+<td>
+0.0004
+</td>
+<td>
+-0.01
+</td>
+<td>
+0.001
 </td>
 <td>
 0.003
