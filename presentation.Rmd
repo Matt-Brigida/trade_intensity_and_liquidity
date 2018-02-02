@@ -4,9 +4,48 @@ author:
 date: 
 output:
   revealjs::revealjs_presentation:
-    theme: sky
+    theme: league
     highlight: pygments
     center: true
 ---
 
 
+
+## Goal of the Analysis
+
+This analysis investigates how liquidity is affected by periods of high trade intensity.  We test whether the following measures, in the few seconds before a trade, have an effect on the book's liquidity in the 100 milliseconds after the trade.
+
+-  number of changes in the orderbook.
+
+-  size of the bid-ask spread.
+
+-  number of trades.
+
+## Results
+
+We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.
+
+
+
+
+## 
+
+<font size="5">
+
+```{r echo = FALSE, message = FALSE, results = 'asis'}
+load("../sept16multiplecontracts.RData")
+
+names(buy.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(buy.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(sell.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.bid.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+names(na.offer.lm$coefficients) <- c("Intercept", "Number Changes", "Avg. Bid/Offer", "Number Trades")
+
+library(stargazer)
+
+stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.bid.lm, covariate.labels = c("Num. Ch.", "Avg. BO", "Num. T"), dep.var.labels = c("Buy/Bid", "Buy/Offer", "Sell/Bid", "Sell/Offer", "NA/Bid", "NA/Offer"), digits = 2, no.space=FALSE, header=FALSE, type='html', omit.stat=c("LL","ser","f"), title = "Regression results for Sept. 16, 2013. The results shown are estimated using an interval of 1 second before the trade, and 100ms after the trade.", font.size="scriptsize", single.row = TRUE, column.sep.width = "1pt")
+
+ ```
+
+</font>
