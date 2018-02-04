@@ -24,6 +24,53 @@ output:
 
 <p align="left">We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.</p>
 
+-  <b class="fragment highlight-current-blue">the activity in the orderbook prior to the trade.</b>
+
+
+## Bid Side After a Sell Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/sell_bid/", height = "500px")
+```
+
+
+## Offer Side After a Sell Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/sell_offer/", height = "500px")
+```
+
+
+## Offer Side After a Buy Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/buy_offer/", height = "500px")
+```
+
+
+## Bid Side After a Buy Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/buy_bid/", height = "500px")
+```
+
+<!-- <section> -->
+<!-- <div class="stretch"> -->
+<!-- <iframe width="560" height="315" src="https://mattbrigida.shinyapps.io/buy_bid/" frameborder="0" allowfullscreen></iframe> -->
+<!-- </div> -->
+<!-- </section> -->
+
+## Offer Side After a NA Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/na_offer/", height = "500px")
+```
+
+## Bid Side After a NA Trade
+
+```{r echo=FALSE}
+knitr::include_app("https://mattbrigida.shinyapps.io/na_bid/", height = "500px")
+```
 
 
 
