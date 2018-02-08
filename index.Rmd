@@ -2,6 +2,7 @@
 title: "Trade Intensity and Liquidity"
 author: "Matt Brigida and William Pratt"
 date: 
+bibliography: references.bib
 output:
   revealjs::revealjs_presentation:
     theme: league
@@ -19,6 +20,46 @@ output:
 -  <b class="fragment highlight-current-blue">size of the bid-ask spread.</b>
 
 -  <b class="fragment highlight-current-blue">number of trades.</b>
+
+## Related Literature
+
+-  @Hend13 report algorithmic traders consume liquidity when spreads narrow, but supply when spread widens.
+
+- @Chor00 observe a relationship and influence of spread on liquidity and market depth is time-varying, noting substantial variability across trading days and over time.
+
+-  @Biai95 finds liquidity offering increases when bid-ask spread widens and observes intraday patterns.
+
+## Identifying HFT
+
+<p align="left">High-frequency traders (HFT) are identified in our analysis by the speed of their reaction to the trade.
+
+- Specifically, we defing HFT as those who can react within 1 to 100 milliseconds after an event.
+
+-  The event we use is a trade. 
+
+## Data
+
+<p align="left">Data are Market Depth Data [[link]](http://www.cmegroup.com/confluence/display/EPICSANDBOX/Market%2BDepth) for natural gas futures (ticker: NG) purchased directly from the Chicago Mercantile Exchange (CME).</p>
+
+-  Market Depth Data contains all market messages to and from the CME, and is time-stamped to the millisecond.
+
+- Using this data we can recreate the NG orderbook up to 10 levels deep.
+
+<p align="left">Our data set is for NGV3 from September 16, 2013 to September 27, 2016 inclusive.</p>
+
+## Why NG?
+
+<p align="left">We choose to use the NYMEX natural gas book in this analysis because:</p>
+
+- Unlike stock, all trades and quotes for NG take place in this one central book.
+
+-  Since all trading takes place on the same computer server, there is no delay in orders due to location.
+
+-  NG is heavily traded and very volatile.
+
+## Data Preparation
+
+
 
 ## Results
 
@@ -255,3 +296,5 @@ stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.
 ```
 
 </font>
+
+## References
