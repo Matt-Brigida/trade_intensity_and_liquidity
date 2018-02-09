@@ -1797,6 +1797,7 @@ This analysis investigates how <b class="fragment highlight-green">liquidity is 
 <ul>
 <li><p>Specifically, we defing HFT as those who can react within 1 to 100 milliseconds after an event.</p></li>
 <li><p>The event we use is a trade.</p></li>
+<li><p>Our method is a modification of the method used in <span class="citation" data-cites="Hasb13">Hasbrouck and Saar (2013)</span> who used an order cancellation as the event.</p></li>
 </ul>
 </section>
 <section id="data" class="slide level2">
@@ -1825,14 +1826,52 @@ We choose to use the NYMEX natural gas book in this analysis because:
 </section>
 <section id="data-preparation" class="slide level2">
 <h2>Data Preparation</h2>
+<ol>
+<li>We first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.</li>
+</ol>
 </section>
-<section id="results" class="slide level2">
-<h2>Results</h2>
+<section id="method" class="slide level2">
+<h2>Method</h2>
 <p align="left">
-We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.
+We model the change in liquidity post-trade as functions of three pre-trade variables. Our model is:
+</p>
+<p><span class="math inline">\(\Delta L = \beta_0 + \beta_1 numC + \beta_2 avgBA + \beta_3 numT + \mu\)</span></p>
+<p align="left">
+where:
 </p>
 <ul>
-<li><b class="fragment highlight-current-blue">the activity in the orderbook prior to the trade.</b></li>
+<li><p><span class="fragment highlight-current-blue"><span class="math inline">\(avgBA\)</span></span> is the average Bid-Ask spread</p></li>
+<li><p><span class="fragment highlight-current-blue"><span class="math inline">\(numT\)</span></span> is the number of trades</p></li>
+<li><p><span class="fragment highlight-current-blue"><span class="math inline">\(numC\)</span></span> is the number of changes in the orderbook</p></li>
+<li><p><span class="fragment highlight-current-blue"><span class="math inline">\(y\)</span></span> is the number of milliseconds prior to the trade.</p></li>
+</ul>
+</section>
+<section id="method-1" class="slide level2">
+<h2>Method</h2>
+<p align="left">
+We estimate this equation for each side of the orderbook, separately for buy and sell trades, and also for trades where the initiator is unknown. We thus have 6 separate regressions.
+</p>
+</section>
+<section id="method-2" class="slide level2">
+<h2>Method</h2>
+<p align="left">
+we calculate <span class="math inline">\(avgBA\)</span>, <span class="math inline">\(numT\)</span>, and <span class="math inline">\(numC\)</span> over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade. The end point of each interval was 1 ms prior to the trade.
+</p>
+<p align="left">
+Similarly, we calculate <span class="math inline">\(Delta L\)</span> over intervals starting 1 ms after the trade, incrementing by 1 ms, until 100 ms after the trade.
+</p>
+<ul>
+<li>This gives us a total of <span class="math inline">\(6(3000) = 18000\)</span> individual regressions for each trading day.</li>
+</ul>
+</section>
+<section id="d-plots" class="slide level2">
+<h2>3D Plots</h2>
+<p align="left">
+Following are 3-dimensional plots of the coefficients estimated over the range of possible pre and post-trade intervals.
+</p>
+<ul>
+<li><p>We use these plots to investigate how sensitive our coefficient estimate is to our choice of pre and post-trade interval.</p></li>
+<li><p>We find an interval of 1 second before the trade, and 100ms after the trade, affords a stable estimate of the coefficient.</p></li>
 </ul>
 </section>
 <section id="bid-side-after-a-sell-trade" class="slide level2">
@@ -1869,6 +1908,24 @@ We find evidence consistent with larger bid-ask spreads leading to greater amoun
 <h2>Bid Side After a NA Trade</h2>
 <iframe src="https://mattbrigida.shinyapps.io/na_bid/?showcase=0" width="768" height="500px">
 </iframe>
+</section>
+<section id="results" class="slide level2">
+<h2>Results</h2>
+<p align="left">
+Some salient features of the results follow. On the left are the pre-trade measures, and on the right is post-trade liquidity.
+</p>
+<ul>
+<li><p><b class="fragment highlight-current-blue">More trades <span class="math inline">\(\Rightarrow\)</span> less liquidity (part. on opp. side).</b></p></li>
+<li><p><b class="fragment highlight-current-blue">More book changes <span class="math inline">\(\Rightarrow\)</span> more liquidity (part. on opp. side).</b></p></li>
+<li><p><b class="fragment highlight-current-blue">The above is true on <em>both</em> sides for NA trades.</b></p></li>
+<li><p><b class="fragment highlight-current-blue">The evidence for the impact of the size of the bid-offer spread is <em>mixed</em>.</b></p></li>
+</ul>
+</section>
+<section id="results-1" class="slide level2">
+<h2>Results</h2>
+<p align="left">
+This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.
+</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
@@ -5254,6 +5311,9 @@ Adjusted R<sup>2</sup>
 </div>
 <div id="ref-Chor00">
 <p>Chordia, Tarun, Richard Roll, and Avanidhar Subrahmanyam. 2000. “Commonality in Liquidity.” <em>Journal of Financial Economics</em> 56 (1):3–28. <a href="https://doi.org/https://doi.org/10.1016/S0304-405X(99)00057-4" class="uri">https://doi.org/https://doi.org/10.1016/S0304-405X(99)00057-4</a>.</p>
+</div>
+<div id="ref-Hasb13">
+<p>Hasbrouck, Joel, and Gideon Saar. 2013. “Low-Latency Trading.” <em>Journal of Financial Markets</em> 16 (4):646–79. <a href="https://doi.org/https://doi.org/10.1016/j.finmar.2013.05.003" class="uri">https://doi.org/https://doi.org/10.1016/j.finmar.2013.05.003</a>.</p>
 </div>
 <div id="ref-Hend13">
 <p>Hendershott, Terrence, and Ryan Riordan. 2013. “Algorithmic Trading and the Market for Liquidity.” <em>Journal of Financial and Quantitative Analysis</em> 48 (04):1001–24.</p>

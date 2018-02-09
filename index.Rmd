@@ -37,6 +37,8 @@ output:
 
 -  The event we use is a trade. 
 
+-  Our method is a modification of the method used in @Hasb13 who used an order cancellation as the event.
+
 ## Data
 
 <p align="left">Data are Market Depth Data [[link]](http://www.cmegroup.com/confluence/display/EPICSANDBOX/Market%2BDepth) for natural gas futures (ticker: NG) purchased directly from the Chicago Mercantile Exchange (CME).</p>
@@ -59,14 +61,43 @@ output:
 
 ## Data Preparation
 
+#. We first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.
 
+## Method
 
-## Results
+<p align="left">We model the change in liquidity post-trade as functions of three pre-trade variables. Our model is:</p>
 
-<p align="left">We find evidence consistent with larger bid-ask spreads leading to greater amounts of liquidity being provided by HFT post-trade and HFT providing liquidity when there is more activity in the orderbook.</p>
+$\Delta L = \beta_0 + \beta_1 numC + \beta_2 avgBA + \beta_3 numT + \mu$
 
--  <b class="fragment highlight-current-blue">the activity in the orderbook prior to the trade.</b>
+<p align="left">where:</p>
 
+-  <span class="fragment highlight-current-blue">$avgBA$</span> is the average Bid-Ask spread
+
+-  <span class="fragment highlight-current-blue">$numT$</span> is the number of trades
+
+-  <span class="fragment highlight-current-blue">$numC$</span> is the number of changes in the orderbook
+
+-  <span class="fragment highlight-current-blue">$y$</span> is the number of milliseconds prior to the trade.
+
+## Method
+
+<p align="left">We estimate this equation for each side of the orderbook, separately for buy and sell trades, and also for trades where the initiator is unknown.  We thus have 6 separate regressions.</p>
+
+## Method
+
+<p align="left">we calculate $avgBA$, $numT$, and $numC$ over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade.  The end point of each interval was 1 ms prior to the trade.</p>
+
+<p align="left">Similarly, we calculate $Delta L$ over intervals starting 1 ms after the trade, incrementing by 1 ms, until 100 ms after the trade.</p>
+
+-  This gives us a total of $6(3000) = 18000$ individual regressions for each trading day.
+
+## 3D Plots
+
+<p align="left">Following are 3-dimensional plots of the coefficients estimated over the range of possible pre and post-trade intervals.</p>
+
+-  We use these plots to investigate how sensitive our coefficient estimate is to our choice of pre and post-trade interval.  
+
+-  We find an interval of 1 second before the trade, and 100ms after the trade, affords a stable estimate of the coefficient.
 
 ## Bid Side After a Sell Trade
 
@@ -112,6 +143,22 @@ knitr::include_app("https://mattbrigida.shinyapps.io/na_offer/", height = "500px
 ```{r echo=FALSE}
 knitr::include_app("https://mattbrigida.shinyapps.io/na_bid/", height = "500px")
 ```
+
+## Results
+
+<p align="left">Some salient features of the results follow.  On the left are the pre-trade measures, and on the right is post-trade liquidity.</p>
+
+-  <b class="fragment highlight-current-blue">More trades $\Rightarrow$ less liquidity (part. on opp. side).</b>
+
+-  <b class="fragment highlight-current-blue">More book changes $\Rightarrow$ more liquidity (part. on opp. side).</b>
+
+-  <b class="fragment highlight-current-blue">The above is true on *both* sides for NA trades.</b>
+
+-  <b class="fragment highlight-current-blue">The evidence for the impact of the size of the bid-offer spread is *mixed*.</b>
+
+## Results
+
+<p align="left">This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.</p> 
 
 
 
