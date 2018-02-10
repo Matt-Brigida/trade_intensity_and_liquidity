@@ -144,24 +144,6 @@ knitr::include_app("https://mattbrigida.shinyapps.io/na_offer/", height = "500px
 knitr::include_app("https://mattbrigida.shinyapps.io/na_bid/", height = "500px")
 ```
 
-## Results
-
-<p align="left">Some salient features of the results follow.  On the left are the pre-trade measures, and on the right is post-trade liquidity.</p>
-
--  <b class="fragment highlight-current-blue">More trades $\Rightarrow$ less liquidity (part. on opp. side).</b>
-
--  <b class="fragment highlight-current-blue">More book changes $\Rightarrow$ more liquidity (part. on opp. side).</b>
-
--  <b class="fragment highlight-current-blue">The above is true on *both* sides for NA trades.</b>
-
--  <b class="fragment highlight-current-blue">The evidence for the impact of the size of the bid-offer spread is *mixed*.</b>
-
-## Results
-
-<p align="left">This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.</p> 
-
-
-
 ## 
 
 <font size="5">
@@ -343,5 +325,30 @@ stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.
 ```
 
 </font>
+
+## Results
+
+<p align="left">Some salient features of the results follow.  On the left are the pre-trade measures, and on the right is post-trade liquidity.</p>
+
+-  <b class="fragment highlight-current-blue">More trades $\Rightarrow$ less liquidity (part. on opp. side).</b>
+
+-  <b class="fragment highlight-current-blue">More book changes $\Rightarrow$ more liquidity (part. on opp. side).</b>
+
+-  <b class="fragment highlight-current-blue">The above is true on *both* sides for NA trades.</b>
+
+-  <b class="fragment highlight-current-blue">The evidence for the impact of the size of the bid-offer spread is *mixed*.</b>
+
+## Trades and Liquidity
+
+<p align="left">Trades take liquidity, and so our result may be interpreted as if there is more liquidity taken prior to the trade, the less liquidity is provided after.</p>
+
+## Book Changes and the Spread
+
+<p align="left">This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.</p> 
+-  HFT is more willing to provide liquidity when the book is active, and not simply because the compensation for providing liquidity is high.
+
+## Contact
+
+matthew.brigida [at] sunyit.edu
 
 ## References
