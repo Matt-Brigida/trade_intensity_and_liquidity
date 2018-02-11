@@ -31,7 +31,7 @@ output:
 
 ## Identifying HFT
 
-<p align="left">High-frequency traders (HFT) are identified in our analysis by the speed of their reaction to the trade.
+<p align="left">High-frequency traders (HFT) are identified in our analysis by the speed of their reaction to the trade.</p>
 
 - Specifically, we defing HFT as those who can react within 1 to 100 milliseconds after an event.
 
@@ -93,7 +93,7 @@ $\Delta L = \beta_0 + \beta_1 numC + \beta_2 avgBA + \beta_3 numT + \mu$
 
 ## Method
 
-<p align="left">we calculate $avgBA$, $numT$, and $numC$ over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade.  The end point of each interval was 1 ms prior to the trade.</p>
+<p align="left">We calculate $avgBA$, $numT$, and $numC$ over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade.  The end point of each interval was 1 ms prior to the trade.</p>
 
 <p align="left">Similarly, we calculate $Delta L$ over intervals starting 1 ms after the trade, incrementing by 1 ms, until 100 ms after the trade.</p>
 
@@ -354,6 +354,8 @@ stargazer(buy.offer.lm, buy.bid.lm, sell.offer.lm, sell.bid.lm, na.offer.lm, na.
 
 <p align="left">This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.</p> 
 -  HFT is more willing to provide liquidity when the book is active, and not simply because the compensation for providing liquidity is high.
+
+-  This point is an important additon to the literature.
 
 ## Contact
 

@@ -1793,7 +1793,8 @@ This analysis investigates how <b class="fragment highlight-green">liquidity is 
 <section id="identifying-hft" class="slide level2">
 <h2>Identifying HFT</h2>
 <p align="left">
-<p>High-frequency traders (HFT) are identified in our analysis by the speed of their reaction to the trade.</p>
+High-frequency traders (HFT) are identified in our analysis by the speed of their reaction to the trade.
+</p>
 <ul>
 <li><p>Specifically, we defing HFT as those who can react within 1 to 100 milliseconds after an event.</p></li>
 <li><p>The event we use is a trade.</p></li>
@@ -1861,7 +1862,7 @@ We estimate this equation for each side of the orderbook, separately for buy and
 <section id="method-2" class="slide level2">
 <h2>Method</h2>
 <p align="left">
-we calculate <span class="math inline">\(avgBA\)</span>, <span class="math inline">\(numT\)</span>, and <span class="math inline">\(numC\)</span> over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade. The end point of each interval was 1 ms prior to the trade.
+We calculate <span class="math inline">\(avgBA\)</span>, <span class="math inline">\(numT\)</span>, and <span class="math inline">\(numC\)</span> over 30 different pre-trade intervals ranging from 100 ms, to 3000 ms prior to the trade. The end point of each interval was 1 ms prior to the trade.
 </p>
 <p align="left">
 Similarly, we calculate <span class="math inline">\(Delta L\)</span> over intervals starting 1 ms after the trade, incrementing by 1 ms, until 100 ms after the trade.
@@ -5315,7 +5316,8 @@ Trades take liquidity, and so our result may be interpreted as if there is more 
 This is evidence that activity in the orderbook may be a more important determinant of liquidity provision than the size of the spread.
 </p>
 <ul>
-<li>HFT is more willing to provide liquidity when the book is active, and not simply because the compensation for providing liquidity is high.</li>
+<li><p>HFT is more willing to provide liquidity when the book is active, and not simply because the compensation for providing liquidity is high.</p></li>
+<li><p>This point is an important additon to the literature.</p></li>
 </ul>
 </section>
 <section id="contact" class="slide level2">
