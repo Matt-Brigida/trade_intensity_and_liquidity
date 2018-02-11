@@ -1827,8 +1827,14 @@ We choose to use the NYMEX natural gas book in this analysis because:
 <section id="data-preparation" class="slide level2">
 <h2>Data Preparation</h2>
 <ol>
-<li>We first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.</li>
+<li><p>We first construct the full limit order book for each day.</p></li>
+<li><p>Then, over each day we first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.</p></li>
+<li><p>For each of these trades we calculate:</p></li>
 </ol>
+<ul>
+<li><p>Our pre-trade measures.</p></li>
+<li><p>The post-trade change in liquidity.</p></li>
+</ul>
 </section>
 <section id="method" class="slide level2">
 <h2>Method</h2>

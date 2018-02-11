@@ -61,7 +61,15 @@ output:
 
 ## Data Preparation
 
-#. We first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.
+#.  We first construct the full limit order book for each day.  
+
+#.  Then, over each day we first extract trades for a single contract with no trades during the same millisecond, and the following 100 ms.
+
+#.  For each of these trades we calculate:
+
+-  Our pre-trade measures.
+
+-  The post-trade change in liquidity.
 
 ## Method
 
