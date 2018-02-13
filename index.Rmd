@@ -87,6 +87,23 @@ $\Delta L = \beta_0 + \beta_1 numC + \beta_2 avgBA + \beta_3 numT + \mu$
 
 -  <span class="fragment highlight-current-blue">$y$</span> is the number of milliseconds prior to the trade.
 
+##
+
+| Day  | numC    | avgBA  | numT   |
+|------|---------|--------|--------|
+| 9/16 | 57.1310 | 1.6067 | 6.0187 |
+| 9/17 | 47.7543 | 1.6248 | 4.0833 |
+| 9/18 | 45.0486 | 1.6433 | 3.9236 |
+| 9/19 | 78.2164 | 1.5122 | 8.6340 |
+| 9/20 | 50.2657 | 1.8090 | 6.3216 |
+| 9/23 | 41.6142 | 1.8415 | 2.9695 |
+| 9/24 | 54.4397 | 1.7706 | 6.0319 |
+| 9/25 | 45.1660 | 1.7523 | 4.6075 |
+| 9/26 | 82.8835 | 1.5351 | 1.0424 |
+| 9/27 | 42.0711 | 1.5000 | 5.3596 |
+: Mean value for each independent variable by trading day.  The average Bid-Ask spread is quoted in tenths of a cent.
+
+
 ## Method
 
 <p align="left">We estimate this equation for each side of the orderbook, separately for buy and sell trades, and also for trades where the initiator is unknown.  We thus have 6 separate regressions.</p>
